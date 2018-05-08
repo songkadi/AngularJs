@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css" />
 </head>
 <body>
 	<div class="container">

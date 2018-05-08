@@ -63,6 +63,36 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.5</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.webjars.bower/bootstrap -->
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.7</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.webjars.bower/angular-ui-router -->
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>angular-ui-router</artifactId>
+            <version>1.0.15</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.webjars.bower/angularjs -->
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>angularjs</artifactId>
+            <version>1.6.5</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.webjars.bower/localforage -->
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>localforage</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.webjars.bower/ngstorage -->
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>ngstorage</artifactId>
+            <version>0.3.11</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
