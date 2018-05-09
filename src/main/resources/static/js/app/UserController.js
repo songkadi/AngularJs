@@ -67,7 +67,7 @@ angular.module('crudApp').controller('UserController',
                     },
                     function(errResponse){
                         console.error('Error while updating User');
-                        self.errorMessage='Error while updating User '+errResponse.data;
+                        self.errorMessage='Error while updating User '+errResponse.data.errorMessage;
                         self.successMessage='';
                     }
                 );
@@ -82,7 +82,7 @@ angular.module('crudApp').controller('UserController',
                         console.log('User '+id + ' removed successfully');
                     },
                     function(errResponse){
-                        console.error('Error while removing user '+id +', Error :'+errResponse.data);
+                        console.error('Error while removing user '+id +', Error :'+errResponse.data.errorMessage);
                     }
                 );
         }
@@ -100,7 +100,7 @@ angular.module('crudApp').controller('UserController',
                     self.user = user;
                 },
                 function (errResponse) {
-                    console.error('Error while removing user ' + id + ', Error :' + errResponse.data);
+                    console.error('Error while removing user ' + id + ', Error :' + errResponse.data.errorMessage);
                 }
             );
         }

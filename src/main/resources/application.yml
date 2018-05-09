@@ -2,6 +2,9 @@
 server:
   port: 8080
   contextPath: /
+#spring:
+#  profiles:
+#    active: ${serverEnv}
 ---
 spring:
   profiles: local, default
@@ -16,7 +19,7 @@ datasource:
     hibernate:
       hbm2ddl.method: create-drop
       show_sql: true
-      format_sql: true
+      format_sql: false
       dialect: org.hibernate.dialect.H2Dialect
 ---
 spring:
@@ -31,7 +34,7 @@ datasource:
     maxPoolSize: 20
     hibernate:
       hbm2ddl.method: update
-      show_sql: true
-      format_sql: true
+      show_sql: false
+      format_sql: false
       dialect: org.hibernate.dialect.MySQLDialect
 
