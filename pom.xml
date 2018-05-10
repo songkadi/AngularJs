@@ -93,6 +93,14 @@
             <artifactId>ngstorage</artifactId>
             <version>0.3.11</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.liquibase.ext/liquibase-hibernate5 -->
+        <dependency>
+            <groupId>org.liquibase.ext</groupId>
+            <artifactId>liquibase-hibernate5</artifactId>
+            <version>3.6</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

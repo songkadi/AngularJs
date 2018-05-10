@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: songkadi
+      changes:
+        - createTable:
+            tableName: APP_USER
+            columns:
+              - column:
+                  name: id
+                  type: long
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: age
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: salary
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: timestamp
+                  defaultValueDate: CURRENT_TIMESTAMP
+  - changeSet:
+      id: 2
+      author: songkadi
+      changes:
+        - insert:
+            tableName: APP_USER
+            columns:
+              - column:
+                  name: name
+                  value: Test Initial
+              - column:
+                  name: age
+                  value: 15
+              - column:
+                  name: salary
+                  value: 51
