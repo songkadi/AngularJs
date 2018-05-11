@@ -1,4 +1,4 @@
-package com.websystique.springboot.util;
+package com.songkadi.util;
 
 
 public class CustomErrorType {

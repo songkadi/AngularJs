@@ -1,4 +1,4 @@
-package com.websystique.springboot.model;
+package com.songkadi.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="APP_USER")
-public class User implements Serializable{
+public class AppUser implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -60,12 +60,12 @@ public class User implements Serializable{
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 
-		User user = (User) o;
+		AppUser appUser = (AppUser) o;
 
-		if (Double.compare(user.salary, salary) != 0) return false;
-		if (id != null ? !id.equals(user.id) : user.id != null) return false;
-		if (name != null ? !name.equals(user.name) : user.name != null) return false;
-		return age != null ? age.equals(user.age) : user.age == null;
+		if (Double.compare(appUser.salary, salary) != 0) return false;
+		if (id != null ? !id.equals(appUser.id) : appUser.id != null) return false;
+		if (name != null ? !name.equals(appUser.name) : appUser.name != null) return false;
+		return age != null ? age.equals(appUser.age) : appUser.age == null;
 	}
 
 	@Override
@@ -82,7 +82,7 @@ public class User implements Serializable{
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", age=" + age
+		return "AppUser [id=" + id + ", name=" + name + ", age=" + age
 				+ ", salary=" + salary + "]";
 	}
 

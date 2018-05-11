@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: songkadi
+      changes:
+        - insert:
+            tableName: OAUTH_CLIENT_DETAILS
+            columns:
+              - column:
+                  name: client_id
+                  value: fooClientIdPassword
+              - column:
+                  name: client_secret
+                  value: secret
+              - column:
+                  name: scope
+                  value: foo,read,write
+              - column:
+                  name: authorized_grant_types
+                  value: password,authorization_code,refresh_token
+              - column:
+                  name: access_token_validity
+                  value: 36000
+              - column:
+                  name: refresh_token_validity
+                  value: 36000
+              - column:
+                  name: autoapprove
+                  value: true

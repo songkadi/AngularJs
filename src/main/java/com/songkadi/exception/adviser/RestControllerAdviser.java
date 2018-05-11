@@ -1,14 +1,14 @@
-package com.websystique.springboot.exception.controller;
+package com.songkadi.exception.adviser;
 
-import com.websystique.springboot.exception.UserDuplicatedException;
-import com.websystique.springboot.exception.UserNotFoundException;
-import com.websystique.springboot.util.CustomErrorType;
+import com.songkadi.exception.UserNotFoundException;
+import com.songkadi.exception.UserDuplicatedException;
+import com.songkadi.util.CustomErrorType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class RestApiControllerAdvice {
+public class RestControllerAdviser {
 
     @ExceptionHandler(UserNotFoundException.class)
     public ResponseEntity<?> notfoundException(UserNotFoundException e) {

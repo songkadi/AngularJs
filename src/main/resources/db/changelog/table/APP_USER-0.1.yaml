@@ -32,19 +32,3 @@ databaseChangeLog:
                   name: date
                   type: timestamp
                   defaultValueDate: CURRENT_TIMESTAMP
-  - changeSet:
-      id: 2
-      author: songkadi
-      changes:
-        - insert:
-            tableName: APP_USER
-            columns:
-              - column:
-                  name: name
-                  value: Test Initial
-              - column:
-                  name: age
-                  value: 15
-              - column:
-                  name: salary
-                  value: 51

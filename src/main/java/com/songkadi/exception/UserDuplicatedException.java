@@ -1,14 +1,14 @@
-package com.websystique.springboot.exception;
+package com.songkadi.exception;
 
-import com.websystique.springboot.model.User;
+import com.songkadi.model.AppUser;
 import org.springframework.http.HttpStatus;
 
 public class UserDuplicatedException extends RuntimeException {
 
     private final HttpStatus httpStatus = HttpStatus.CONFLICT;
 
-    public UserDuplicatedException(User user) {
-        super("A User with name " + user.getName() + " already exist");
+    public UserDuplicatedException(AppUser appUser) {
+        super("A AppUser with name " + appUser.getName() + " already exist");
     }
 
     public HttpStatus getHttpStatus() {

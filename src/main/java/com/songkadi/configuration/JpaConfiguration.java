@@ -1,4 +1,4 @@
-package com.websystique.springboot.configuration;
+package com.songkadi.configuration;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.lang3.StringUtils;
@@ -25,7 +25,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.websystique.springboot.repositories",
+@EnableJpaRepositories(basePackages = "com.songkadi.repositories",
         entityManagerFactoryRef = "entityManagerFactoryLiquibase",
         transactionManagerRef = "transactionManager")
 @EnableTransactionManagement
@@ -75,7 +75,7 @@ public class JpaConfiguration {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
 
         factoryBean.setDataSource(dataSource());
-        factoryBean.setPackagesToScan(new String[]{"com.websystique.springboot.model"});
+        factoryBean.setPackagesToScan(new String[]{"com.songkadi.model"});
         factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         factoryBean.setJpaProperties(jpaProperties());
@@ -87,7 +87,7 @@ public class JpaConfiguration {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
 
         factoryBean.setDataSource(dataSource());
-        factoryBean.setPackagesToScan(new String[]{"com.websystique.springboot.model"});
+        factoryBean.setPackagesToScan(new String[]{"com.songkadi.model"});
         factoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
 
         factoryBean.setJpaProperties(jpaProperties());

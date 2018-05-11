@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.websystique.springboot</groupId>
-    <artifactId>SpringBootCRUDApplicationExample</artifactId>
+    <groupId>com.songkadi</groupId>
+    <artifactId>AngularJs</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>SpringBootCRUDApplicationExample</name>
+    <name>Tutorial</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -51,6 +51,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <!-- Add MySQL database support [for running with PRODUCTION profile] -->
         <dependency>
@@ -92,12 +93,17 @@
             <artifactId>ngstorage</artifactId>
             <version>0.3.11</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.liquibase.ext/liquibase-hibernate5 -->
         <dependency>
             <groupId>org.liquibase.ext</groupId>
             <artifactId>liquibase-hibernate5</artifactId>
             <version>3.6</version>
+        </dependency>
+
+        <!--Security-->
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
         </dependency>
 
     </dependencies>
@@ -111,4 +117,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Milestone Repository</name>
+            <url>https://repo.spring.io/milestone</url>
+        </repository>
+    </repositories>
 </project>

@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: songkadi
+      changes:
+        - createTable:
+            tableName: OAUTH_CLIENT_DETAILS
+            columns:
+              - column:
+                  name: client_id
+                  type: VARCHAR(256)
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: resource_ids
+                  type: varchar(255)
+              - column:
+                  name: client_secret
+                  type: varchar(255)
+              - column:
+                  name: scope
+                  type: varchar(255)
+              - column:
+                  name: authorized_grant_types
+                  type: varchar(255)
+              - column:
+                  name: web_server_redirect_uri
+                  type: varchar(255)
+              - column:
+                  name: authorities
+                  type: varchar(255)
+              - column:
+                  name: access_token_validity
+                  type: INTEGER
+              - column:
+                  name: refresh_token_validity
+                  type: INTEGER
+              - column:
+                  name: additional_information
+                  type: VARCHAR(4096)
+              - column:
+                  name: autoapprove
+                  type: varchar(255)
