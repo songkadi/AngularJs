@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: songkadi
+      changes:
+        - insert:
+            tableName: LOGIN_USER
+            columns:
+              - column:
+                  name: username
+                  value: john
+              - column:
+                  name: password
+                  value: $2a$10$9gH2776pe6uXoEBiu/3RTubwntysV1vfat78vnjW0Bav5XwXayDKS
+

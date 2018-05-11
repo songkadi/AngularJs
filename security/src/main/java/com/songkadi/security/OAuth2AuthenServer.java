@@ -1,6 +1,6 @@
 package com.songkadi.security;
 
-import com.songkadi.service.LoginUserServiceImpl;
+import com.songkadi.service.LoginUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +22,7 @@ public class OAuth2AuthenServer extends AuthorizationServerConfigurerAdapter {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private LoginUserServiceImpl loginUserServiceImpl;
+    private LoginUserService loginUserService;
 
     @Autowired
     private DataSource dataSource;
@@ -34,7 +34,7 @@ public class OAuth2AuthenServer extends AuthorizationServerConfigurerAdapter {
 
     public void configure(AuthorizationServerEndpointsConfigurer configurer) throws Exception {
         configurer.authenticationManager(authenticationManager);
-        configurer.userDetailsService(loginUserServiceImpl);
+        configurer.userDetailsService(loginUserService);
     }
 
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
@@ -46,6 +46,9 @@ public class OAuth2AuthenServer extends AuthorizationServerConfigurerAdapter {
 //                .authorizedGrantTypes("password", "refresh_token")
 //                .resourceIds("resource")
 //        ;
-        clients.jdbc(dataSource);
+        clients
+                .jdbc(dataSource).passwordEncoder(passwordEncoder())
+//                .inMemory()
+        ;
     }
 }

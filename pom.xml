@@ -1,18 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.songkadi</groupId>
     <artifactId>AngularJs</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Tutorial</name>
+    <name>AngularJs</name>
+    <description>AngularJs</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.12.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
@@ -101,28 +104,19 @@
         </dependency>
 
         <!--Security-->
-        <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth2</artifactId>
-        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>com.songkadi</groupId>-->
+        <!--<artifactId>security</artifactId>-->
+        <!--<version>0.0.1-SNAPSHOT</version>-->
+        <!--</dependency>-->
 
     </dependencies>
     <build>
         <plugins>
-            <plugin><!-- Include if you want to make an executable jar[FAT JAR which
-					includes all dependencies along with sprinboot loader] that you can run on 
-					commandline using java -jar NAME -->
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>spring-milestone</id>
-            <name>Spring Milestone Repository</name>
-            <url>https://repo.spring.io/milestone</url>
-        </repository>
-    </repositories>
 </project>
