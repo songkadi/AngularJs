@@ -23,7 +23,7 @@ public class RestApiClaimController {
     private ClaimRepository claimRepository;
 
     @GetMapping(value = "/claim/")
-    public ResponseEntity<List<Claim>> listAllUsers() {
+    public ResponseEntity<List<Claim>> listAllClaims() {
         logger.info("Fetching all Claim");
 
         List<Claim> claims = claimRepository.findAll();
@@ -32,7 +32,7 @@ public class RestApiClaimController {
     }
 
     @GetMapping(value = "/claim/{claimNumber}")
-    public ResponseEntity<?> getUser(@PathVariable("claimNumber") String claimNumber) {
+    public ResponseEntity<?> getClaim(@PathVariable("claimNumber") String claimNumber) {
         logger.info("Fetching Claim with claimNumber {}", claimNumber);
 
         Claim currentClaim = claimRepository.findOne(claimNumber);
@@ -41,7 +41,7 @@ public class RestApiClaimController {
     }
 
     @PostMapping(value = "/claim/")
-    public ResponseEntity<?> createUser(@RequestBody Claim claim, UriComponentsBuilder ucBuilder) {
+    public ResponseEntity<?> createClaim(@RequestBody Claim claim, UriComponentsBuilder ucBuilder) {
         logger.info("Creating Claim : {}", claim);
 
         Claim resultClaim = claimRepository.save(claim);
