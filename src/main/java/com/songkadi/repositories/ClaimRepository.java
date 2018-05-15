@@ -1,12 +1,9 @@
 package com.songkadi.repositories;
 
-import com.songkadi.model.AppUser;
+import com.songkadi.model.Claim;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AppUserRepository extends JpaRepository<AppUser, Long> {
-
-    AppUser findByName(String name);
-
+public interface ClaimRepository extends JpaRepository<Claim, String> {
 }

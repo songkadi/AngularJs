@@ -15,11 +15,12 @@ import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import javax.naming.NamingException;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -29,7 +30,7 @@ import java.util.Properties;
         entityManagerFactoryRef = "entityManagerFactoryLiquibase",
         transactionManagerRef = "transactionManager")
 @EnableTransactionManagement
-public class JpaConfiguration {
+public class SpringConfiguration {
 
     @Autowired
     private Environment environment;
@@ -37,11 +38,6 @@ public class JpaConfiguration {
     @Value("${datasource.sampleapp.maxPoolSize:10}")
     private int maxPoolSize;
 
-    /*
-     * Populate SpringBoot DataSourceProperties object directly from application.yml
-     * based on prefix.Thanks to .yml, Hierachical data is mapped out of the box with matching-name
-     * properties of DataSourceProperties object].
-     */
     @Bean
     @Primary
     @ConfigurationProperties(prefix = "datasource.sampleapp")
@@ -49,9 +45,6 @@ public class JpaConfiguration {
         return new DataSourceProperties();
     }
 
-    /*
-     * Configure HikariCP pooled DataSource.
-     */
     @Bean
     public DataSource dataSource() {
         DataSourceProperties dataSourceProperties = dataSourceProperties();
@@ -67,21 +60,20 @@ public class JpaConfiguration {
         return dataSource;
     }
 
-    /*
-     * Entity Manager Factory setup.
-     */
-//    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() throws NamingException {
-        LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
+    //    Normal JPA
+    //    @Bean
+    //    public LocalContainerEntityManagerFactoryBean entityManagerFactory() throws NamingException {
+    //        LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
+    //
+    //        factoryBean.setDataSource(dataSource());
+    //        factoryBean.setPackagesToScan(new String[]{"com.songkadi.model"});
+    //        factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+    //
+    //        factoryBean.setJpaProperties(jpaProperties());
+    //        return factoryBean;
+    //    }
 
-        factoryBean.setDataSource(dataSource());
-        factoryBean.setPackagesToScan(new String[]{"com.songkadi.model"});
-        factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-
-        factoryBean.setJpaProperties(jpaProperties());
-        return factoryBean;
-    }
-
+    //    Liquibase
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryLiquibase() throws ClassNotFoundException {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
@@ -94,9 +86,6 @@ public class JpaConfiguration {
         return factoryBean;
     }
 
-    /*
-     * Here you can specify any provider specific properties.
-     */
     private Properties jpaProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", environment.getRequiredProperty("datasource.sampleapp.hibernate.dialect"));
@@ -115,5 +104,16 @@ public class JpaConfiguration {
         JpaTransactionManager txManager = new JpaTransactionManager();
         txManager.setEntityManagerFactory(emf);
         return txManager;
+    }
+
+    // Disable CORS rejection
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/api/**").allowedOrigins("*");
+            }
+        };
     }
 }

@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: songkadi
+      changes:
+        - insert:
+            tableName: CLAIM
+            columns:
+              - column:
+                  name: CLAIM_NUMBER
+                  value: Example Claim Number 1
+              - column:
+                  name: CAR_VEHICLE
+                  value: Example vehicle 1
+              - column:
+                  name: LATITUDE
+                  value: 10.000009
+              - column:
+                  name: LONGITUDE
+                  value: 3.9990009112312
+        - insert:
+            tableName: CLAIM
+            columns:
+              - column:
+                  name: CLAIM_NUMBER
+                  value: Example Claim Number 2
+              - column:
+                  name: CAR_VEHICLE
+                  value: Example vehicle 2

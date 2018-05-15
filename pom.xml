@@ -39,6 +39,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <!--Add web socket-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-websocket</artifactId>-->
+        <!--</dependency>-->
         <!-- Add Hikari Connection Pooling support -->
         <dependency>
             <groupId>com.zaxxer</groupId>
@@ -96,6 +101,12 @@
             <artifactId>ngstorage</artifactId>
             <version>0.3.11</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.webjars.bower/tether -->
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>tether</artifactId>
+            <version>1.4.3</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.liquibase.ext/liquibase-hibernate5 -->
         <dependency>
             <groupId>org.liquibase.ext</groupId>
@@ -110,6 +121,12 @@
         <!--<version>0.0.1-SNAPSHOT</version>-->
         <!--</dependency>-->
 
+        <!--WebSocket-->
+        <!--<dependency>-->
+        <!--<groupId>com.songkadi</groupId>-->
+        <!--<artifactId>websocket</artifactId>-->
+        <!--<version>0.0.1-SNAPSHOT</version>-->
+        <!--</dependency>-->
     </dependencies>
     <build>
         <plugins>

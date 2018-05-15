@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: songkadi
+      changes:
+        - createTable:
+            tableName: CLAIM
+            columns:
+              - column:
+                  name: CLAIM_NUMBER
+                  type: varchar(255)
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: CAR_VEHICLE
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: LATITUDE
+                  type: double
+              - column:
+                  name: LONGITUDE
+                  type: double

@@ -2,14 +2,14 @@
 #https://www.liquibase.org/documentation/column.html
 databaseChangeLog:
   - include:
-      file: db/changelog/table/APP_USER-0.1.yaml
-  - include:
       file: db/changelog/table/LOGIN_USER-0.1.yaml
-  - include:
-      file: db/changelog/table/APP_USER-0.2.yaml
   - include:
       file: db/changelog/table/OAUTH_CLIENT_DETAILS-0.1.yaml
   - include:
       file: db/changelog/table/OAUTH_CLIENT_DETAILS-0.2.yaml
   - include:
       file: db/changelog/table/LOGIN_USER-0.2.yaml
+  - include:
+      file: db/changelog/table/CLAIM-0.1.yaml
+  - include:
+      file: db/changelog/table/CLAIM-0.2.yaml
