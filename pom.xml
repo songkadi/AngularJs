@@ -6,134 +6,21 @@
     <groupId>com.songkadi</groupId>
     <artifactId>AngularJs</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>AngularJs</name>
-    <description>AngularJs</description>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.12.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+    <description>Demo project for Spring Boot</description>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <h2.version>1.4.197</h2.version>
     </properties>
 
-    <dependencies>
-        <!-- Add typical dependencies for a web application -->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-web</artifactId>-->
-        <!--</dependency>-->
-        <!-- Add freemarker template support -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-freemarker</artifactId>
-        </dependency>
-        <!-- Add JPA support -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <!--Add web socket-->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-websocket</artifactId>-->
-        <!--</dependency>-->
-        <!-- Add Hikari Connection Pooling support -->
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-        </dependency>
-        <!-- Add H2 database support [for running with local profile] -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>${h2.version}</version>
-        </dependency>
-        <!--H2 console-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <!-- Add MySQL database support [for running with PRODUCTION profile] -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.5</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.webjars.bower/bootstrap -->
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>bootstrap</artifactId>
-            <version>3.3.7</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.webjars.bower/angular-ui-router -->
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>angular-ui-router</artifactId>
-            <version>1.0.15</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.webjars.bower/angularjs -->
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>angularjs</artifactId>
-            <version>1.6.5</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.webjars.bower/localforage -->
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>localforage</artifactId>
-            <version>1.4.1</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.webjars.bower/ngstorage -->
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>ngstorage</artifactId>
-            <version>0.3.11</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.webjars.bower/tether -->
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>tether</artifactId>
-            <version>1.4.3</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.liquibase.ext/liquibase-hibernate5 -->
-        <dependency>
-            <groupId>org.liquibase.ext</groupId>
-            <artifactId>liquibase-hibernate5</artifactId>
-            <version>3.6</version>
-        </dependency>
+    <modules>
+        <module>boot</module>
+        <module>security</module>
+        <module>websocket</module>
+    </modules>
 
-        <!--Security-->
-        <!--<dependency>-->
-        <!--<groupId>com.songkadi</groupId>-->
-        <!--<artifactId>security</artifactId>-->
-        <!--<version>0.0.1-SNAPSHOT</version>-->
-        <!--</dependency>-->
-
-        <!--WebSocket-->
-        <!--<dependency>-->
-        <!--<groupId>com.songkadi</groupId>-->
-        <!--<artifactId>websocket</artifactId>-->
-        <!--<version>0.0.1-SNAPSHOT</version>-->
-        <!--</dependency>-->
-    </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>

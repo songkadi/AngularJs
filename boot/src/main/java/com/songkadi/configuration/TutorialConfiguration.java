@@ -30,7 +30,7 @@ import java.util.Properties;
         entityManagerFactoryRef = "entityManagerFactoryLiquibase",
         transactionManagerRef = "transactionManager")
 @EnableTransactionManagement
-public class SpringConfiguration {
+public class TutorialConfiguration {
 
     @Autowired
     private Environment environment;
